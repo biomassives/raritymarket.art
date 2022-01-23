@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Parallelism by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>RARITY MARKET . ART</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>function scaleHeader() {
+  var scalable = document.querySelectorAll('.scale--js');
+  var margin = 10;
+  for (var i = 0; i < scalable.length; i++) {
+    var scalableContainer = scalable[i].parentNode;
+    scalable[i].style.transform = 'scale(1)';
+    var scalableContainerWidth = scalableContainer.offsetWidth - margin;
+    var scalableWidth = scalable[i].offsetWidth;
+    scalable[i].style.transform = 'scale(' + scalableContainerWidth / scalableWidth + ')';
+    scalableContainer.style.height = scalable[i].getBoundingClientRect().height + 'px';
+  }
+} 
+// Debounce by David Walsch
+// https://davidwalsh.name/javascript-debounce-function
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+var myScaleFunction = debounce(function() {
+	scaleHeader();
+}, 250);
+myScaleFunction();
+window.addEventListener('resize', myScaleFunction);
+</script>
+		<style>
+			
+.scale__container--js {
+  text-align: center;
+}
+.scale--js {
+  display: inline-block;
+  transform-origin: 50% 0;
+  -webkit-font-smoothing: antialiased;
+  transform: translate3d( 0, 0, 0);
+}
+.container {
+  margin: 30px 0;
+  max-width: 500px;
+  background: tomato;
+  padding:30px;
+}
+			
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<div class="scale__container--js"><h1 class="scale--js">I'm full width</h1></div>
+
+				<!-- Main -->
+					<section id="main">
+
+ 
+            
+            <div>
+              Ecocommunity game enables players to work together to create circular economies. 
+              Success in this game requires learning the nuts and bolts of different emergent 
+              business models reliant upon local waste stream resources ( upcycling ), use of 
+              renewble energy, nurturing of useful certain in your community.
+              <BR>
+              Each player group must work together to be ready for different challenges and opportunties
+              that come up as they move around the game board working to create or control the flow of
+              resources, feed your people, and reform education to ensure that subsequent generations are
+              capable of maintaining the business models encircling different areas of activity on the game board 
+              perimiter.  
+              <BR>
+              When three sides of an area of activity are claimed by a team or coalilion, the team or coalition may
+              begin to move their player to the center area, where they must cope with a new kind of challenge card
+              <BR>
+              Challenge cards are 
+              
+.
+              
+              
+              </div>
+            
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<section>
+							<p>Pi is a new digital currency developed by Stanford PhDs, 
+							with over 25 million members worldwide. To join the ecocommunity mining group for Pi, 
+								please <a href="https://minepi.com/ecocommunity">go here with (ecocommunity) as your invitation code.
+							<a href="http://html5up.net/license">Creative Commons Attribution</a></p>
+						</section>
+						<section>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; 2022 BIOMASSIVES GROUP </li><li>templating: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</section>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
