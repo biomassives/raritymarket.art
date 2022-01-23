@@ -11,11 +11,65 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>function scaleHeader() {
+  var scalable = document.querySelectorAll('.scale--js');
+  var margin = 10;
+  for (var i = 0; i < scalable.length; i++) {
+    var scalableContainer = scalable[i].parentNode;
+    scalable[i].style.transform = 'scale(1)';
+    var scalableContainerWidth = scalableContainer.offsetWidth - margin;
+    var scalableWidth = scalable[i].offsetWidth;
+    scalable[i].style.transform = 'scale(' + scalableContainerWidth / scalableWidth + ')';
+    scalableContainer.style.height = scalable[i].getBoundingClientRect().height + 'px';
+  }
+} 
+// Debounce by David Walsch
+// https://davidwalsh.name/javascript-debounce-function
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+var myScaleFunction = debounce(function() {
+	scaleHeader();
+}, 250);
+myScaleFunction();
+window.addEventListener('resize', myScaleFunction);
+</script>
+		<style>
+			
+.scale__container--js {
+  text-align: center;
+}
+.scale--js {
+  display: inline-block;
+  transform-origin: 50% 0;
+  -webkit-font-smoothing: antialiased;
+  transform: translate3d( 0, 0, 0);
+}
+.container {
+  margin: 30px 0;
+  max-width: 500px;
+  background: tomato;
+  padding:30px;
+}
+			
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
+				<div class="scale__container--js"><h1 class="scale--js">I'm full width</h1></div>
 
 				<!-- Main -->
 					<section id="main">
